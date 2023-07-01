@@ -34,8 +34,31 @@
     <script>
         var core = window.document.getElementById('cores')
         
-        core.style.background = 'red'
+        core.addEventListener('mouseenter',entra)
+        core.addEventListener('mousemove', mover)
+        core.addEventListener('mousedonw', segurar)
+        core.addEventListener('mouseup', soltar)// click esquerdo
+        core.addEventListener('click', clicar)
+        core.addEventListener('mouseout', saidar)
         
+        function entra(){
+            core.style.background = 'red'
+        }
+        function mover(){
+            core.style.background = 'green'
+        }
+        function segurar(){
+            core.style.background = 'blue'
+        }
+        function soltar(){
+            core.style.background = 'yellow'
+        }
+        function clicar(){
+            core.style.background = 'blueviolet'
+        }
+        function saidar(){
+            core.style.background = 'darkorange'
+        }
     </script>
 </body>
 </html>
