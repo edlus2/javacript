@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacões</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: linear-gradient(to left, rgba(255, 0, 0, 0.767), rgba(14, 0, 66, 0.788) , black);
+        }
+        h1{
+            text-align: center;
+            padding-top: 10%;
+            color: white;
+        }
+        div{
+            text-align: center;
+            padding-top: 20px;
+        }
+        input{
+            padding: 20px;
+            animation: led 5s infinite;
+            border-radius: 10px;  
+            cursor: pointer;     
+        }
+        @keyframes led {
+            0%{
+                border: 3px solid yellow;
+            }
+            10%{
+                border: 3px solid blue;
+            }
+            20%{
+                border: 3px solid red;
+            }
+            30%{
+                border: 3px solid yellow;
+            }
+            40%{
+                border: 3px solid blue;
+            }
+            50%{
+                border: 3px solid red;
+            }
+            60%{
+                border: 3px solid yellow;
+            }
+            70%{
+                border: 3px solid blue;
+            }
+            80%{
+                border: 3px solid red;
+            }
+            90%{
+                border: 3px solid yellow;
+            }
+            100%{
+                border: 3px solid blue;
+            }
+        }
+        #texto{
+            color: white;
+            font: 2em sans-serif;
+            padding-top: 20px;
+        }
+        #ima{
+            display: none;
+        }
+        #ima img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ola gostaria de nos passar uma informações?</h1>
+    <div>
+        <input type="button" value="Informacões" id="butao">
+    </div>
+    <div id="texto"></div>
+    <div id="ima"><img src="https://www.pngmart.com/files/11/LMAO-Emoji-PNG-Pic.png" alt="rindo"></div>
+
+    <script>
+        var bu = window.document.getElementById('butao')
+        bu.addEventListener('click',clicar) 
+        var tex = window.document.getElementById('texto')
+        var imagem = window.document.getElementById('ima')
+
+        function clicar(){
+            let nome = window.prompt('Ola Qual E Seu Nome?')
+            let idade = window.prompt(`ola ${nome},Qual a sua idade?`)
+            window.alert(`Acabei de conhecer ${nome}, que tem ${idade}anos de idade.`) 
+            tex.innerHTML = `Obrigado por vim aqui em minha pagina ${nome}<br>Pela sua idade de ${idade} anos , ja deve te sofrido muito em kkk.`
+            imagem.style.display = 'block'
+        }
+    </script>
+</body>
+</html>
