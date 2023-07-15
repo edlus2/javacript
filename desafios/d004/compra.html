@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: linear-gradient(to top, rgb(255, 0, 200),rgb(0, 107, 102),rgb(145, 34, 0));
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content{
+           background-color: rgba(30, 210, 195, 0.397);
+           padding: 50px;
+           border-radius: 30px;
+           box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.356);           
+
+        }
+        h1{
+            margin: 10px;
+        }
+        #prod{
+           text-align: center;
+           border: 1px solid black;
+           color: black;
+           font-weight: bold;
+           background-color: blueviolet;
+           border-radius: 10px;
+           padding: 10px;
+           cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Calculando o Troco</h1>
+        <div id="prod">Compra produto</div>
+    </div>
+    <script>
+        var produto = window.document.getElementById('prod')
+        produto.addEventListener('click',clicar)
+
+        function clicar(){
+            let pro = window.prompt('Qual produto desejar comprar?')
+            let valor = window.prompt(`Quanto custa o ${pro} que esta comprando?`)
+            let dinheiro = window.prompt(`Qual valor você tem para pagar o ${pro}?`)
+
+            troco = dinheiro - valor
+
+            if(valor <= dinheiro){
+                window.alert(`Você comprou um ${pro} que custava R$${valor}.\nDeu R$${dinheiro} e vai receber R$${troco} de troco. \nVolte sempre.`)
+            }else{
+                window.alert(`Você nao possui dinheiro suficiante.\nFalta R$${troco} para comprar o ${pro}.\nObrigado`)
+            }
+
+        }
+    </script>
+</body>
+</html>
