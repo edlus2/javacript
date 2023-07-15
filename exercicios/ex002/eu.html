@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão</title>
+    <link rel="shortcut icon" href="../../imagem/mascote.png" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url(fundo.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .conteiner{
+           background-color: rgba(255, 255, 255, 0.4);
+           padding: 30px;
+           border-radius: 30px;
+           border: 2px solid black;
+        }
+        h1{
+            margin-bottom: 50px;
+           font: 3em sans-serif; 
+        }
+        button{
+            cursor: pointer;
+            font-weight: bolder;
+            height: 50px;
+            width: 50%;
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+            background-color: white;
+            transition: 0.2s;
+        }
+        button:hover{
+            background-color: rgb(179, 179, 179);
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <h1>Interação com Botão</h1>
+        <button id="inter">Clique no Botão</button>
+    </div>
+
+    <script>
+        var but = window.document.getElementById('inter')
+        but.addEventListener('click', clicar)
+
+        function clicar(){
+            window.alert('Você clicou no botão!')
+        }
+    </script>
+</body>
+</html>
