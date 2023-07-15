@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes E Depois</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgb(98, 0, 255) , rgb(0, 38, 255) ,rgb(0, 102, 255));
+        }
+        .centro{
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 50px;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 2em;
+        }
+        button{
+            cursor:pointer;
+            color: white;
+            font-weight: bolder;
+            border-radius: 10px;
+            border: 2px solid white;
+            background-color: rgba(255, 255, 255, 0.13);
+            display: block;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="centro">
+        <h1>Antes e Depois</h1>
+        <button id="cli">Antecessor e o Sucessor</button>
+    </div>
+    <script>
+        var infor = window.document.getElementById('cli')
+        infor.addEventListener('click', clicar)
+
+        function clicar(){
+            var n1 = window.prompt('Digite um numero inteiro qualquer.')
+            n2 = n1 - 1
+            n3 = n2 + 2
+            window.alert(`Antes de ${n1},Temos o número ${n2}. \nDepois de ${n1},Temos o número ${n3}.`)
+            window.alert(`Parabens concluido desafio 3`)
+        }
+    </script>
+</body>
+</html>
