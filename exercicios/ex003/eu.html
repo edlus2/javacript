@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Com JS</title>
+    <link rel="shortcut icon" href="../../imagem/mascote.png" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+            background-image: url(fundo.jpg);
+            background-size:cover;
+            background-repeat: no-repeat;
+        }
+        #content{
+            padding-top: 20px;
+            background-color: rgba(255, 255, 255, 0.123);
+            text-align: center;
+        }
+        h1{
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.548);
+            font-weight: bold;
+            font: 2em sans-serif;
+        }
+        button{
+            cursor: pointer;
+            border-radius: 10px;
+            padding: 20px;
+            margin:  20px 0px;
+            background-color: rgba(255, 255, 255, 0.658);
+        }
+        button:hover{
+            background-color: white;
+        }
+        #non{
+            display: none;
+        }
+        #cent{
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .apos{
+           border-radius:  10px;
+            padding: 20px;
+            display: block;
+            margin: auto;
+            width: 800px;
+            background-color: rgba(255, 255, 255, 0.548);
+            
+        }
+        p{
+            text-align: center;
+            font-weight: bold;
+            font: 2em sans-serif;
+        }
+        img{
+            display: block;
+            margin: auto;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Trabalhando com dados v1.0</h1>
+        <button id="interacao">Clique Para Começar</button>
+    </div>
+    <div id="non">
+        <div id="cent">
+            <div class="apos">
+                <p id="text"></p>
+                <img src="saldacao.png" alt="saldacao">
+            </div>
+        </div>
+    </div>
+    <script>
+        var bot = window.document.getElementById('interacao')
+        bot.addEventListener('click',clicar)
+
+        var volta = window.document.getElementById('non')
+
+        var texto = window.document.getElementById('text')
+
+        function clicar(){
+            let nome = window.prompt('Qual é o seu nome?')
+            window.alert(`Olá, ${nome}! É um prazer te conhecer!`)
+            volta.style.display = 'block'
+            texto.innerHTML = `Ola e um prazer te conhecer ${nome}.`
+            
+        }
+    </script>
+</body>
+</html>
