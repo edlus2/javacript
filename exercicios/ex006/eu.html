@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aquamarine;
+        }
+        h1{
+            font: 2em sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button{
+            display: block;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        p{
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    <button>Iniciar a soma</button>
+    <p>O resultado vem aqui...</p>
+    <script>
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click', somar)
+
+        function somar(){
+            let n1 = Number(window.prompt('Digite um numero.'))
+            let n2 = Number(window.prompt('digite outro numero'))
+
+            let res = window.document.getElementsByTagName('p')[0]
+
+            res.innerHTML = `A soma entre <mark>${n1}</mark> e <mark>${n2}</mark> é igual a <strong>${n1+n2}</strong>!`
+        }
+    </script>
+</body>
+</html>
