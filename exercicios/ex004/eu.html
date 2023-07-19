@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: linear-gradient(to bottom, rgb(78, 0, 151), rgb(0, 80, 80) ,rgb(17, 150, 0));
+            background-attachment: fixed;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            font: 3em sans-serif;
+            padding: 20px;
+        }
+        button{
+            cursor: pointer;
+            padding: 30px;
+            display: block;
+            margin: auto;
+        }
+        p{
+            padding: 20px;
+            text-align: center;
+        }
+        img{
+            display: none;
+            width: 200px;
+            margin: auto;
+        }
+        strong{
+            text-transform: uppercase;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Dados v2.0</h1>
+    <button>Clique para começa</button>
+    <p>Aqui vai aparecer o resultado</p>
+    <img src="https://play-lh.googleusercontent.com/cJokjWYV_EhTZJvJG0zbV6CowN5V8EoyjzF4LssGyjhTo6rAVntx3XjD7AkBQ2IdFKw" alt="meme">
+
+    <script>
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click', clicar)
+
+        let texto = window.document.getElementsByTagName('p')[0]
+
+        let ima = window.document.getElementsByTagName('img')[0]
+
+        function clicar(){
+            let nome = window.prompt('Ola qual e seu nome?')
+             
+            texto.style.fontSize = '2em'
+            texto.innerHTML = `Olá,<strong> ${nome}</strong> ! É um grande prazer te conhecer!`
+
+            ima.style.display = 'block'
+        }
+    </script>
+</body>
+</html>
