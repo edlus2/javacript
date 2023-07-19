@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calcular</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: goldenrod;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+
+            font: 3em sans-serif;
+        }
+        button{
+            padding: 30px;
+            margin: auto;
+            display: block;
+        }
+        p{
+            text-align: center;
+            font: 2em sans-serif;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com números</h1>
+    <button>Clique para calcular</button>
+    <p>O resultado vem aqui...</p>
+    <script>
+        window.alert('Seja bem-vindo(a) ao meu site!')
+
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click', clicar)
+
+        let res = window.document.getElementsByTagName('p')[0]
+
+        function clicar(){
+            let num = Number(window.prompt('informe um numero'))
+
+            res.innerHTML = `O dobro de ${num} é ${num*2} e a metade é ${num/2}!` 
+
+        }
+    </script>
+</body>
+</html>
