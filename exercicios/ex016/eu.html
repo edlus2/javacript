@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua idade</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: tomato;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header{
+            padding: 25px;
+            background-color: saddlebrown;
+        }
+        .boto{
+            padding: 25px;
+            margin: 20px;
+            border-radius: 10px;
+            border: 2px dashed black;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculando a idade</h1>
+    </header>
+    <section>
+        <button class="boto">Iniciar</button>
+        <p>Aqui vai aparecer algo...</p>
+    </section>
+    <script>
+        let bot = window.document.getElementsByClassName('boto')[0]
+        bot.addEventListener('click', aperta)
+
+        let res = window.document.getElementsByTagName('p')[0]
+
+        function aperta() {
+            let nascimento = Number(window.prompt('Em que ano você nasceu?'))
+
+            let a = new Date
+            let ano = a.getFullYear()
+
+            res.innerHTML = `Quem nasceu em ${nascimento} vai completar <strong>${ano - nascimento}</strong> anos em ${ano}.`
+        }
+    </script>
+</body>
+</html>
