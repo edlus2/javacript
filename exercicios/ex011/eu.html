@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: blue;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+            color: white;
+            background-color: black;
+            margin-bottom: 20px;
+        }
+        button{
+            display: block;
+            margin: auto;
+            padding: 30px;
+        }
+        #tabela{
+            display: flex;
+            justify-content: center;
+        }
+        table{
+            margin-top: 20px;
+            background-color: white;
+        }
+        .cabeca > th{
+            padding: 15px;
+            background-color: grey;
+            border: 1px solid black;
+        }
+        th{
+            padding: 30px;
+            text-align: center;
+        }
+        table , td{
+            padding: 20px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .resultado{
+           text-align: center;
+           text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Média do aluno v2.0</h1>
+        <button>Calcular Notas</button>
+    </header>
+    <section>
+        <div id="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="3" id="nomes">Aluno</th>
+                    </tr>
+                    <tr class="cabeca">
+                        <th>bimestre</th>
+                        <th>nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 bimestre</td>
+                        <td id="nota01">nota:10</td>
+                    </tr>
+                    <tr>
+                        <td>2 bimestre</td>
+                        <td id="nota02">nota: 10</td>
+                    </tr>
+                    <tr>
+                        <td>Media 1 + 2</td>
+                        <td id="medd"><mark>media: 12</mark></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="resultado">
+                        <td colspan="3" id="resul"> 🔝 media para ser aprovado  🔝</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+    
+    <script>
+        //criando funcao para o botao
+        let inicio = window.document.getElementsByTagName('button')[0]
+        inicio.addEventListener('click', aperta)
+
+        //criando let para dar o nome
+        let nome = window.document.getElementById('nomes')
+
+        //criacao de let para obter a 1 e 2 nota
+        let not1 = window.document.getElementById('nota01')
+        let not2 = window.document.getElementById('nota02')
+       
+        //criacao da media das 2 nota
+        let med = window.document.getElementById('medd')
+
+        //resultado onde mostra se passou ou não
+        let res = window.document.getElementById('resul')
+
+        function aperta() {
+            let aluno = window.prompt('Qual nome do aluno?')
+
+            let nota1 = Number(window.prompt('Digite sua nota do primeiro bimestre.')) 
+
+            let nota2 = Number(window.prompt('Digite sua nota do segundo bimestre.'))
+
+            total = (nota1 + nota2)
+
+            nome.innerHTML = `${aluno}`
+
+            not1.innerHTML = `nota: ${nota1}`
+
+            not2.innerHTML = `nota: ${nota2}`
+
+            med.innerHTML = `media: ${total}`
+
+            if ( total >= 12 ){
+            res.innerHTML = 'PARABENS APROVADO'
+        }else{
+            res.innerHTML = 'REPROVADO INFELIZMENTE'
+        }
+        }       
+        
+    </script>
+</body>
+</html>

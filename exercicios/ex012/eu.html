@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>impar ou par</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: darkgray;
+        }
+        header{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            background-color: darkviolet;
+            color: white;
+            margin-bottom: 10px;
+        }
+        button{
+            cursor: pointer;
+            border: 1px dashed black;
+            border-radius: 10px;
+            background-color: yellow;
+            padding: 30px;
+            display: block;
+            margin: auto;
+        }
+        p{
+            text-align: center;
+            padding: 20px;
+            text-transform: uppercase;
+        }
+        par{
+            background-color: green;
+        }
+        impar{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>É par ou é ímpar?</h1>
+    </header>
+    <section>
+        <button>Clique para iniciar</button>
+        <p id="resultado">O resultado vai aparecer aqui...</p>
+    </section>
+    <script>
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click', aperte)
+
+        let res = window.document.getElementById('resultado')
+
+        
+
+        function aperte() {
+            let numero = Number(window.prompt('Digite um numero.'))
+ 
+            if (numero % 2 === 0) {
+                res.innerHTML = `O número <par>${numero}</par> que foi digitado é <par>PAR</par>!`
+                bot.style.backgroundColor = 'green'
+            } else {
+                res.innerHTML = `O número <impar>${numero}</impar> que foi digitado é <impar>ÍMPAR!</impar>`
+                bot.style.backgroundColor = 'red'
+            }
+        }
+    </script>
+</body>
+</html>

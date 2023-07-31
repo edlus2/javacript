@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar +1?</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: goldenrod;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+            color: darkred;
+        }
+        div{
+            display: flex;
+            justify-content: space-around;
+        }
+        button{
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px dashed black;
+            background-color: rgba(107, 77, 0, 0.993);
+            color: white;
+        }
+        section{
+            text-align: center;
+            padding-top: 20px;
+            color: rgb(82, 2, 2);
+        }
+        mark{
+            color: white;
+            background-color: black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador</h1>
+    <div>
+        <button id="somar">Somar +1</button>
+        <button id="zerar">Zera essa bagaça</button>
+    </div>
+    <section id="resultado">
+        <p>Quantas vez ja apertei? <mark>0</mark></p>
+    </section>
+
+    <script>
+        //adiciona +1
+        let add = 0
+
+        //click somar
+        let soma = window.document.getElementById('somar')
+        soma.addEventListener('click',adicional)
+
+        // click zerar
+        let zero = window.document.getElementById('zerar')
+        zero.addEventListener('click',limpar)
+
+        //resultado
+        let res = window.document.getElementById('resultado')
+
+        //função de somar +1
+        function adicional() {
+            add ++
+            res.innerHTML = `ja clicou <mark>${add}</mark>`
+        }
+
+        //função de zerar
+        function limpar() {
+            add = 0
+            res.innerHTML = `Zera não vai começa de novo <mark> Zé </mark>.`
+        }
+
+    </script>
+</body>
+</html>

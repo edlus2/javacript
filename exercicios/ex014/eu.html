@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: indigo;
+            font-family: cursive;
+        }
+        h1{
+            background-color: midnightblue;
+            text-align: center;
+            padding: 20px;
+            color: darksalmon;
+            margin-bottom: 20px;
+        }
+        button{
+            margin: auto;
+            display: block;
+            padding: 25px;
+            border: 1px dashed black;
+            border-radius: 10px;
+        }
+        p{
+            text-transform: uppercase;
+            color: skyblue;
+            text-align: center;
+            margin-top: 20px;
+        }
+        mark{
+            background-color: burlywood
+            ;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interagindo com o sistema</h1>
+    </header>
+    <section>
+        <button>Clique em mim</button>
+        <p>Aqui vai aparecer algo...</p>
+    </section>
+
+    <script>
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click', aperta)
+
+        // nesse modo ira pegar todos dados
+        let dias = new Date
+
+        /*
+        caso queira separado algum
+        ano
+        d = dias.getFullYear
+        dia
+        d = dias.getDay 
+        minutos
+        d = dias.getMinutes
+        mes
+        d = dias.getMonth
+        e etc...
+        */
+
+        let res = window.document.getElementsByTagName('p')[0]
+
+        function aperta() {
+            res.innerHTML = `O que eu recebi do sistema foi <mark> ${dias}.</mark>`
+        }
+
+
+        
+    </script>
+</body>
+</html>

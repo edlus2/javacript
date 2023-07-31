@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: burlywood;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        h1{
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: cadetblue;
+            text-align: center;
+        }
+        button{
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px dashed darkcyan;
+            margin: auto;
+            display: block;
+            background-color: chocolate;
+        }
+        p{
+            margin-top: 20px;
+            text-align: center;
+        }
+        num1{
+            background-color: green;
+        }
+        num2{
+            background-color: red;
+        }
+        igual{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Maior valor</h1>
+    </header>
+    <section>
+        <button>Clique para começar</button>
+        <p>O resultado vai aparecer aqui...</p>
+    </section>
+
+    <script>
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click',aperta)
+
+        let res = window.document.getElementsByTagName('p')[0]
+        function aperta() {
+            let num1 = Number(window.prompt('Digite um número:'))
+            let num2 = Number(window.prompt('Digite outro número:'))
+
+            if (num1 > num2){
+                res.innerHTML = `Analisando os valores <num1>${num1}</num1> e <num1>${num2}</num1>, o maior valor é <num1>${num1}</num1>`
+                bot.style.backgroundColor = 'green'
+            }else if(num1 < num2){
+                res.innerHTML = `Analisando os valores <num2>${num2}</num2> e <num2>${num1}</num2>, o maior valor é <num2>${num2}</num2>`
+                bot.style.backgroundColor = 'red'
+            }else{
+                res.innerHTML = `Analisando os valores <igual>${num1}</igual> e <igual>${num2}</igual>, ambos são <igual>IGUAIS</igual>`
+                bot.style.backgroundColor = 'grey'
+            }
+        }
+    </script>
+</body>
+</html>

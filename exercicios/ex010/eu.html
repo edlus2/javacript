@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: khaki;
+        }
+        h1{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font: 2em;
+        }
+        p{
+            padding: 20px;
+            text-align: center;
+        }
+        #centro{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        button{
+            padding: 30px 20px;
+        }
+        #bot1{
+            background-color: red;
+            color: black;
+            font-weight: bold;
+        }
+        #bot2{
+            background-color: blue;
+            color: black;
+            font-weight: bold;
+        }
+        #bot3{
+            background-color: salmon;
+            color: black;
+            font-weight: bold;
+        }
+        #bot4{
+            background-color: forestgreen;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>javasript interno</h1>
+        <p>Usado js interno devido estar fazendo na mesma pasta dos exercicio e não bagunça muito.</p>
+        <div id="centro">
+            <button id="bot1">Ação 1️⃣</button>
+            <button id="bot2">Ação 2️⃣</button>
+            <button id="bot3">Ação 3️⃣</button>
+            <button id="bot4">Ação 4️⃣</button>
+        </div>
+    </header>
+
+    <section id="acao">
+        <p>Aqui vou registrar suas ações com os botões acima.</p>
+    </section>
+    
+    <script>
+        //adicionado e criado funçao de onclick no 1 botão
+        let botao1 = window.document.getElementById('bot1')
+        botao1.addEventListener('click',aperto1)
+
+        //adicionado e criado funçao de onclick no 2 botão
+        let botao2 = window.document.getElementById('bot2')
+        botao2.addEventListener('click',aperto2)
+
+        //adicionado e criado funçao de onclick no 3 botão
+        let botao3 = window.document.getElementById('bot3')
+        botao3.addEventListener('click',aperto3)
+
+        //adicionado e criado funçao de onclick no 4 botão
+        let botao4 = window.document.getElementById('bot4')
+        botao4.addEventListener('click',aperto4)
+
+        let escrita = window.document.getElementById('acao')
+
+        function aperto1() {
+            escrita.style.color = 'red'
+            escrita.innerHTML += '<p>voçê apertou no 1</p>'
+        }
+        function aperto2() {
+            escrita.style.color = 'blue'
+            escrita.innerHTML += '<p>voçê apertou no 2</p>'
+        }
+        function aperto3() {
+            escrita.style.color = 'salmon'
+            escrita.innerHTML += '<p>voçê apertou no 3</p>'
+        }
+        function aperto4() {
+            escrita.style.color = 'forestgreen'
+            escrita.innerHTML += '<p>voçê apertou no 4</p>'
+        }
+
+    </script>
+
+</body>
+</html>

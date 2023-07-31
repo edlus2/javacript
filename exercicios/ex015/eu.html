@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data e hora do dia</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            text-align: center;
+            background-color: darkslategrey;
+            font-family: monospace;
+        }
+        header{
+            padding: 20px;
+            background-color: darkorchid;
+        }
+        button{
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+        }
+        p{
+           color: white; 
+           padding: 10px;
+        }
+        mark{
+            text-transform: capitalize;
+            background-color: chartreuse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Analisando data e hora do Sistema</h1>
+    </header>
+    <section>
+        <button>Iniciar Analise</button>
+        <p>Aqui vai aparecer algo...</p>
+    </section>
+
+    <script>
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click',aperta)
+
+        let res = window.document.getElementsByTagName('p')[0]
+        /*
+        let algo = new date
+        a let algo pode ser usado em todos assim diminuindo linhas de codigo e melhorando a visao do codigo
+         */
+        function aperta() {
+            let d = new Date
+            let dia = d.getDate()
+            res.innerHTML = `<p>Dia : <mark>${dia}</mark></p>`
+
+            let meses = new Array ('janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setenbro','outubro','novembro','dezembro')
+            let m = new Date
+            let mes = m.getMonth()
+            res.innerHTML += `<p>Mês : <mark>${meses[mes]}</mark></p>`
+
+            let a = new Date
+            let ano = a.getFullYear()
+            res.innerHTML += `<p>Ano : <mark>${ano}</mark></p>`
+
+            let semana = new Array ('domingo','segunda', 'terca','quarta','quinta','sexta','sabado')
+            let s = new Date
+            let ds = s.getDay()
+            res.innerHTML += `<p>Dia da semana : <mark>${semana[ds]}</mark></p>`
+
+            let h = new Date
+            let hora = h.getHours()
+            res.innerHTML += `<p>Hora : <mark>${hora}</mark></p>`
+
+            let mi = new Date
+            let minuto = mi.getMinutes()
+            res.innerHTML += `<p>Minutos : <mark>${minuto}</mark></p>`
+
+            let se = new Date
+            let segundos = se.getSeconds()
+            res.innerHTML += `<p>Segundos : <mark>${segundos}</mark></p>`
+        }
+    </script>
+</body>
+</html>
