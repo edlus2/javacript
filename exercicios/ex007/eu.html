@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: coral;
+        }
+        header{
+            margin: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        button{
+            padding: 20px;
+            display: block;
+            margin: auto;
+        }
+        #content{
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .nota{
+            background-color: darkkhaki;
+            border: 1px solid black;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .nota h2{
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        .nota p{
+            text-transform: capitalize;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Média do aluno v1.0</h1>
+    </header>
+    <section>
+        <button>Calculo médio</button>
+        <div id="content">
+            <div class="nota">
+                <h2>Notas Dadas</h2>
+                <p>Portugues 1 semestre (30pts)</p>
+                <p>Portugues 2 semestre (30pts)</p>
+                <p>Portugues 3 semestre (40pts)</p>
+            </div>
+            <div class="nota">
+                <h2>Notas obtidas</h2>
+                <p id="n1">qual sua nota no 1 semestre?</p>
+                <p id="n2">qual sua nota no 2 semestre?</p>
+                <p id="n3">qual sua nota no 3 semestre?</p>
+                <p id="med"><strong>media:</strong>?</p>
+            </div>
+        </div>
+    </section>
+    <script>
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click', media)
+
+        let nota1 = window.document.getElementById('n1')
+        let nota2 = window.document.getElementById('n2')
+        let nota3 = window.document.getElementById('n3')
+
+        let medi = window.document.getElementById('med')
+
+        function media(){
+            not1 = Number(window.prompt('qual foi sua nota no 1 semestre?'))
+            not2 = Number(window.prompt('qual foi sua nota no 3 semestre?'))
+            not3 = Number(window.prompt('qual foi sua nota no 3 semestre?'))
+
+            nota1.innerHTML = `Sua nota no primeiro semestre : ${not1}`
+            nota2.innerHTML = `Sua nota no segundo semestre : ${not2}`
+            nota3.innerHTML = `Sua nota no terceiro semestre : ${not3}`
+
+            total = not1 + not2 + not3
+
+            medi.innerHTML = `<strong>Media</strong> : ${total /2} `
+
+        }
+    </script>
+</body>
+</html>
