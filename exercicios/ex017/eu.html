@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de numeros</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: burlywood;
+        }
+        header{
+            text-align: center;
+            padding: 20px;
+            background-color: darkblue;
+            color: white;
+        }
+        .lot{
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        button{
+            margin: 10px;
+            padding: 20px;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gerador de números</h1>
+    </header>
+    <section>
+        <div class="lot">
+            <button>Clique em mim</button>
+            <button>Limpar</button>
+        </div>
+            <p>Cada vez que você apertar o botão acima, eu penso em um número entre 1 e 100.</p>
+    </section>
+
+    <script>
+        let bot1 = window.document.getElementsByTagName('button')[0]
+        bot1.addEventListener('click',aperta)
+
+        let bot2 = window.document.getElementsByTagName('button')[1]
+        bot2.addEventListener('click',limpar)
+
+        let res = window.document.getElementsByTagName('p')[0]
+
+        function aperta() {
+           let min = 1
+           let max = 100
+           let dif = 100 - 1
+           let ale = Math.random()
+           let num = min + Math.trunc(dif * ale)
+            
+            res.innerHTML += `<p>Acabei de pensar no número <mark>${num}</mark>!</p>`
+        }
+
+        function limpar(){
+            res.innerHTML = null
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo em js</title>
+</head>
+<body onload="sortea()">
+    <header>
+        <h1>Tente adivinhar meu número</h1>
+    </header>
+    <section>
+        <button id="boto">Tentar adivinhar</button>
+        <p>Já pensei em um valor entre 1 e 100...</p>
+    </section>
+
+    <script>
+        let bot = window.document.getElementsByTagName('button')[0]
+        bot.addEventListener('click', aperta)
+
+        let res = window.document.getElementsByTagName('p')[0]
+
+        let num = 0
+        let ale = 0
+
+        function sortea() {
+            let min = 1
+            let max = 100
+            let dif = max - min
+            let aleatorio = Math.random()
+            ale = min + Math.trunc(dif * aleatorio)
+        }
+
+
+        function aperta() {
+            num = Number(window.prompt('Qual é o seu palpite?'))
+
+            if (num > ale ){
+                res.innerHTML += `<p>Você falou ${num}. Meu número é <strong>MENOR!</strong></p>`
+            } else if(num < ale){
+                res.innerHTML += `<p>Você falou ${num}. Meu número é <strong>MAIOR!</strong></p>`
+            } else if(num == ale){
+                res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor ${num}!</p>`
+                document.getElementById('boto').style.visibility = 'hidden'
+            }
+
+        }
+    </script>
+</body>
+</html>
