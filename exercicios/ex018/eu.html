@@ -4,6 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo em js</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: darkolivegreen;
+            font-family: cursive;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+        }
+        button{
+            display: block;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid blueviolet;
+        }
+        button:hover{
+            background-color: darkorange;
+        }
+        p{
+            margin-top: 20px;
+            text-align: center;
+        }
+        strong{
+            padding: 5px;
+            border-radius: 10px;
+            color: black;
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body onload="sortea()">
     <header>
@@ -36,11 +70,11 @@
             num = Number(window.prompt('Qual é o seu palpite?'))
 
             if (num > ale ){
-                res.innerHTML += `<p>Você falou ${num}. Meu número é <strong>MENOR!</strong></p>`
+                res.innerHTML += `<p>Você falou <strong>${num}</strong> . Meu número é <strong>MENOR!</strong></p>`
             } else if(num < ale){
-                res.innerHTML += `<p>Você falou ${num}. Meu número é <strong>MAIOR!</strong></p>`
+                res.innerHTML += `<p>Você falou <strong>${num}</strong> . Meu número é <strong>MAIOR!</strong></p>`
             } else if(num == ale){
-                res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor ${num}!</p>`
+                res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor <strong>${num}</strong>!</p>`
                 document.getElementById('boto').style.visibility = 'hidden'
             }
 
