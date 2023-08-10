@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4753/4753175.png" type="image/x-icon">
+    <style>
+        body{
+            background: rgba(0, 153, 255, 0.521);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        header{
+            color: white;
+            text-align: center;
+        }
+        section{
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+        }
+        footer{
+            font-style: italic;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                Ano de nascimento:
+                <input type="number" name="txtano" id="txtano" min="0">
+            </p>
+            <p>
+                Sexo:
+                <input type="radio" name="sex" id="mas" checked>
+                <label for="mas">Masculino</label>
+
+                <input type="radio" name="sex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar">
+            </p>
+        </div>
+        <div id="res">
+            <p>
+                Preencha os dados acima para ver o resultado!
+            </p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Edlus2</p>
+    </footer>
+    
+    <script>
+        var verificado = window.document.getElementsByTagName('input')[3]
+        verificado.addEventListener('click',verifica)
+
+        function verifica() {
+            var data = new Date()
+            var ano = data.getFullYear()
+            var fano = document.getElementById('txtano')
+
+            var res = document.getElementById('res')
+
+            if (fano.value.length == 0 || fano.value > ano){
+                window.alert('[ERRO] verifique os dados e tente novamente')
+            } else {
+                var sex = document.getElementsByName('sex')
+                var idade = ano - Number(fano.value)
+
+                var img = document.createElement('img')
+                img.setAttribute('id', 'foto')
+                img.style.width = '200px'
+                img.style.height = '200px'
+                img.style.borderRadius = '50%'
+                img.style.margin = 'auto'
+                img.style.display = 'block'
+
+                var genero = ''
+                if (sex[0].checked) {
+                    genero = 'Homem'
+                    if (idade >= 0 && idade < 10){
+                        img.setAttribute ('src' , 'https://i.pinimg.com/736x/44/a9/dc/44a9dc96873114b07fb47b91ffd5f70c.jpg')
+                    }else if ( idade < 21){
+                        img.setAttribute('src' , 'https://img.freepik.com/vetores-premium/jovem-desenho-de-ilustracao-vetorial-de-personagem-de-estilo-anime-manga-anime-boy_147933-4721.jpg?w=2000')
+                    }else if (idade < 50){
+                        img.setAttribute('src' , 'https://cupulatrovao.com.br/wp-content/uploads/2021/06/Satoru-Gojo-personagem-do-anime-Jujutsu-Kaisen-1024x579.jpg')
+                    }else {
+                        img.setAttribute('src' , 'https://www.intoxianime.com/wp-content/uploads/2019/07/Dragon-Ball-Master-Roshi-Buff-1024x512.jpg')
+                    }
+                } else if(sex[1].checked){
+                    genero = 'Mulher'
+                    if (idade >= 0 && idade < 10){
+                        img.setAttribute ('src' , 'https://www.animeunited.com.br/oomtumtu/2022/05/FSuuyk8XwAAEqC3-1024x576.jpg')
+                    }else if ( idade < 21){
+                        img.setAttribute('src' , 'https://i0.wp.com/metagalaxia.com.br/wp-content/uploads/2022/03/Urakaka.webp?resize=1024%2C576&ssl=1')
+                    }else if (idade < 50){
+                        img.setAttribute('src' , 'https://anime.atsit.in/wp-content/uploads/2022/06/top-10-personagens-femininas-de-anime-mais-quentes-de-todos-os-tempos.jpg')
+                    }else {
+                        img.setAttribute('src' , 'https://i.pinimg.com/564x/20/07/81/20078192b3c880cc92c571662d7791fb.jpg')
+                    }
+                }
+
+                res.style.textAlign = 'center'
+                res.innerHTML = ` seu e ${genero} , e sua idade ${idade}`
+                res.appendChild(img)
+            }
+        }
+    </script>
+</body>
+</html>
