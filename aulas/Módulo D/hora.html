@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/151/151770.png" type="image/x-icon">
+    <style>
+        body{
+            background: rgba(0, 153, 255, 0.521);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        header{
+            
+            color: white;
+            text-align: center;
+        }
+        section{
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+        }
+        footer{
+            font-style: italic;
+            text-align: center;
+            color: white;
+        }
+        #msg{
+            text-align: center;
+            padding: 10px;
+        }
+        #foto{
+            display: block;
+            margin: auto;
+            width: 250px;
+            height: 250px;
+            
+        }
+        #imagem{
+            width: 100%;
+            height: 100%;
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body onload="inicia()">
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+    <section>
+        <div id="msg">
+            aqui hora
+        </div>
+        <div id="foto">
+            <img id="imagem" src="https://img.freepik.com/fotos-premium/paisagem-de-anime-com-um-campo-e-nuvens_900775-9778.jpg" alt="dia">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Edlus2</p>
+    </footer>
+
+    <script>
+        function inicia(){
+            var msg = window.document.getElementById('msg')
+            var img = window.document.getElementById('imagem')
+
+            var data = new Date()
+            var hora = data.getHours()
+
+            msg.innerHTML = `Agora são ${hora} horas.`
+            
+            if(hora >= 0 && hora < 12){
+                document.body.style.background = 'rgba(0, 153, 255, 0.521)'
+                img.src = 'https://img.freepik.com/fotos-premium/paisagem-de-anime-com-um-campo-e-nuvens_900775-9778.jpg'
+            } else if (hora >= 12 && hora <18){
+                document.body.style.background = 'rgb(112, 61, 20)'
+                img.src = 'https://img.freepik.com/fotos-premium/tarde-por-do-sol-ceu-nuvens-paisagem-anime-background-ilustracao-ai-generative_892631-466.jpg'
+            } else {
+                document.body.style.background = 'rgb(0, 5, 71)'
+                img.src = 'https://i.pinimg.com/1200x/0d/72/49/0d7249fb475366a99ba1454cef686328.jpg'
+            }
+        }
+
+    </script>
+</body>
+</html>
