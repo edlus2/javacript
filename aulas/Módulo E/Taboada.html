@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taboada</title>
+    <link rel="shortcut icon" href="https://play-lh.googleusercontent.com/_Us8FJ-gH4Qip98RNq8ovrgTDvA9kjjCUjW7eiSFL_g3EkAYO9s2-UHAPplL5F1DYYzA" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(15, 0, 218);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            text-align: center;
+            color: white;
+        }
+        h1{
+            padding: 20px;
+        }
+        #centro{
+            padding-top: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px 3px rgba(158, 158, 158, 0.418);
+            background-color: rgb(211, 238, 241);
+            width: 400px;
+            height: 100%;
+            margin: auto;
+        }
+        #centro > div{
+            padding: 10px;
+        }
+        footer{
+            font-style: italic;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+        #resultado{
+            display: block;
+            margin: auto;
+            width: 150px;
+            height: 100%;
+            background-color: rgb(213, 255, 216);
+        }
+        #resultado > option{
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Taboada</h1>
+    </header>
+    <section>
+        <div id="centro">
+            <div>
+                <label for="Num">Numero:</label>
+                <input type="number" name="num" id="num">
+                <input type="submit" value="Gerar Taboada" onclick="gerar()">
+            </div>
+            <div>
+                <select name="Tab" id="resultado" size="10">
+                    <option value="re">Resultado...</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Edlus2</p>
+    </footer>
+
+    <script>
+        function gerar(){
+            let nu = document.getElementById('num')
+            let res = document.getElementById('resultado')        
+
+            if (nu.value.length == 0){
+                window.alert('Por favor, Digite um numerp!')
+            } else{
+                let n = Number(nu.value)
+                res.innerHTML= ''
+                for(let c = 1; c <= 10 ; c++){
+                    let item = document.createElement('option')
+                    item.text = `${n} x ${c} = ${n*c}`
+                    item.value = `tab${c}`
+                    res.appendChild(item)
+                }
+            }
+            
+
+        }
+    </script>
+</body>
+</html>
