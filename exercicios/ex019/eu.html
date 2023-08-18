@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculo</title>
+    <title>Múltiplas ações</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: darkviolet;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            margin-bottom: 20px;
+        }
+        img{
+            border-radius: 15px;
+            margin: auto;
+            display: block;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        input{
+            width: 200px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px dashed black;
+            color:black;
+            margin: 20px;
+        }
+        p{
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Múltiplas ações</h1>
+    </header>
+    <section>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBu_HeoAcKk7Y9or7liRhQLDP5ZigfmaHhtkXM8iQ_w&s" alt="taboada">
+        <div><input type="submit" value="Iniciar" onclick="comecar()"></div>
+        <p id="resultado">Resultado...</p>
+    </section>
+
+    <script>
+        function comecar(){
+            let n1 = Number(window.prompt('Escolha um numero:'))
+            let n2 = Number(window.prompt('Escolha outro numero:'))
+
+            let escolha = Number(window.prompt(`Os numero escolhido foi : ${n1} e ${n2}. \n Qual ação quer realiza? \n [1]Somar \n [2]Diminuir \n [3]Multiplicar \n [4]Dividir`))
+
+            let res = document.getElementById('resultado')
+
+            //Meu  projeto feito com if
+
+            if(escolha >=5 || escolha <= 0){
+                res.innerHTML = 'Você nao escolheu uma ação...'
+            }else if(escolha == 1){
+                res.innerHTML = `Somar fica ${n1+n2}`
+            }else if (escolha == 2){
+                res.innerHTML = `Diminuir fica ${n1-n2}`
+            }else if (escolha == 3){
+                res.innerHTML = `Multiplicar fica ${n1*n2}`
+            }else if (escolha == 4){
+                res.innerHTML = `Dividir fica ${n1/n2}`
+            }
+            
+            /* projeto feito igual ao do professor
+            switch (escolha){
+                case 1:
+                    res.innerHTML = `Somar fica ${n1+n2}`
+                    break
+                case 2:
+                    res.innerHTML = `Diminuir fica ${n1-n2}`
+                    break
+                case 3:
+                    res.innerHTML = `Multiplicar fica ${n1*n2}`
+                    break
+                case 4:
+                    res.innerHTML = `Dividir fica ${n1/n2}`
+                    break
+                default:
+                    res.innerHTML = 'Você nao escolheu uma ação...'
+                    break
+            }
+            */
+        }
+        
+    </script>
 </body>
 </html>
